@@ -9,8 +9,13 @@
     <link rel="stylesheet" href=twittler.css>
   </head>
   <body>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
 
-    <h1> <img src="twittlerlogo.png" title="Twittler Logo" height ="204" width="769" </h1>
+
+    <h1> <img src="twittlerlogo.png" title="Twittler Logo" height ="204" width="769"> </h1>
     <h2> Like Twitter, only basic </h2>
     <br>
     <button class="showTweets"> Display New Tweets </button>
@@ -38,7 +43,7 @@
             var $tweet = $('<div class="tweet"></div>');
             $tweet.append('<span class="username" >@' + tweet.user + ': </span>');
             $tweet.append('<span class="message">' + tweet.message + ' </span> ');
-            $tweet.append('<p class="time">' + tweet.created_at + ' </p>');
+            $tweet.append('<p class="time">' + tweet.created_at + ' </p></br>');
             tweetstore.push($tweet);
             index -= 1;
           } 
