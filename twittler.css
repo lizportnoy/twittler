@@ -1,0 +1,91 @@
+/* Took normalize css and am modifying it for design */
+
+/* CSS syntax: 
+ selector {
+ 		property: value;
+ 		property: valye;
+ 		} */
+body {
+
+	text-indent: 72px;
+
+}
+
+.showTweets {
+    background-color: #d7d6d8;
+    font-size: 14px;
+    border: 2px solid #666;
+    color: #8081a0;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 72px;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px 
+	solid: #8081a0;
+	display:inline-block;
+	cursor:pointer;
+	font-family:arial;
+	font-size:12px;
+	padding:10px 25px;
+	text-decoration:none;
+}
+
+h1 {
+	line-height: 0em;
+	margin: 0;
+	text-indent: 32px;
+}
+
+h2 {
+	color: #8081a0;
+	font-size: 36px;
+	font-weight: bold;
+	text-indent: 72px;
+	font-family: "Courier New";
+	margin: 0 ;
+}
+
+
+h3 {
+	color: 2a3135 ;
+	font-size: 14px;
+	line-height: 3em;
+	font-family: Georgia, "Times New Roman";
+	letter-spacing: .5px;
+
+	}
+
+.username {
+	color: 2a3135 ;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Georgia, "Times New Roman";
+	letter-spacing: .5px;
+}
+
+.message {
+	color: #2a3135 ;
+	font-size: 16px;
+	font-family: Georgia, "Times New Roman";
+	letter-spacing: .5px;
+}
+
+.time {
+	color: #d7d6d8 ;
+	font-size: 12px;
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman";
+	line-height: .1em;
+}
+
+.highlighted {
+	background-color: #563;
+	border-color: 1px solid #967;
+}
+
+
+
+
+

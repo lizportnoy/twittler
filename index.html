@@ -1,50 +1,63 @@
 <!DOCTYPE html>
-<!-- 
 
-          // Design your interface so that ywant to look at and use the product you're making.
-
-          // Allow the user to click on a username to see that user's timeline. -->
 
 <html>
 
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" href=twittler.css>
   </head>
   <body>
 
-    <h1> Twittler </h1>
+    <h1> <img src="twittlerlogo.png" title="Twittler Logo" height ="204" width="769" </h1>
     <h2> Like Twitter, only basic </h2>
-    <button class="showTweets">Display New Tweets</button>
-    <p></p>
-
+    <br>
+    <button class="showTweets"> Display New Tweets </button>
+    <br>
+    <br>
+    <h3>
+      <p id="tweet"></p>
+  </h3>
     <script>
 
 
       $(document).ready(function(){
 
-        var refreshTweets = function (insertLocation) {
+        var $body = $('#tweet');
+        $body.html('');
+
+        var refreshTweets = function (selectUser) {
+
+          var tweetstore = [];
 
           var index = streams.home.length - 1;
 
-          while(index >= 0){
-
-            var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message + " | " +  <br> +
-              tweet.created_at);
-            $tweet.insertBefore(insertLocation);
+          while(index>= 0) {
+            var tweet = arguments.length<1 ? streams.home[index] : streams.home.selectUser[index];
+            var $tweet = $('<div class="tweet"></div>');
+            $tweet.append('<span class="username" >@' + tweet.user + ': </span>');
+            $tweet.append('<span class="message">' + tweet.message + ' </span> ');
+            $tweet.append('<p class="time">' + tweet.created_at + ' </p>');
+            tweetstore.push($tweet);
             index -= 1;
-          }
+          } 
+
+          $body.prepend(tweetstore);
+
         };
 
-        refreshTweets($('body').find('script'));
+        refreshTweets();
+        
 
-        $('.showTweets').on('click', function () {
-
-          return refreshTweets($('body').find('div').first())
+        $('button').on('click', function () {
+          $('div').remove('.tweet');
+          return refreshTweets();
 
         });
+
+        
+
       
       });  
 
