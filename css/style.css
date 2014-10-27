@@ -32,15 +32,14 @@ body {
 		#bottom { bottom: 0; }
 
 
-button {
+button, input[type="submit"] {
     background-color: #d7d6d8;
     font-size: 14px;
     border: 1px solid #666;
     color: #8081a0;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 74px;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 74px;
 	-moz-border-radius:45px;
 	-webkit-border-radius:45px;
 	border-radius:45px;
@@ -48,12 +47,37 @@ button {
 	height: 30px;
 	border:.5px 
 	solid: #8081a0;
-	display:inline-block;
+	display:inline;
 	cursor:pointer;
 	font-family:arial;
 	font-size:12px;
 	padding:5px 10px;
 	text-decoration:none;
+}
+
+input[type="submit"] {
+	width :100px;
+	display: inline;
+	margin-left: 5px;
+}
+
+
+#showTweets {
+	margin-left: 74px;
+}
+
+input[type="text"] {
+	display: inline;
+	font-family: Georgia, "Times New Roman", helvetica, arial;
+	margin-left: 5px;
+	width: 200px;
+}
+
+label {
+	display: inline;
+	font-family: Georgia, "Times New Roman", helvetica, arial;
+	margin-left: 0px;
+	text-align: left;
 }
 
 h1 {
@@ -67,28 +91,28 @@ h2 {
 	font-size: 36px;
 	font-weight: bold;
 	text-indent: 72px;
-	font-family: "Courier New";
+	font-family: "Courier New", Georgia, "Times New Roman", helvetica, arial;
 	margin: 0 ;
 }
-
-
-
 
 
 h3 {
 	color: 2a3135 ;
 	font-size: 14px;
 	line-height: 1em;
-	font-family: Georgia, "Times New Roman";
+	font-family: Georgia, "Times New Roman", helvetica, arial;
 	letter-spacing: .5px;
 
 	}
+.tweet {
+	padding: 10px 0 10px 0;
+}
 
 .username {
 	color: 2a3135 ;
 	font-size: 16px;
 	font-weight: bolder;
-	font-family: Georgia, "Times New Roman";
+	font-family:  Georgia, "Times New Roman", helvetica, arial;
 	letter-spacing: .5px;
 	cursor: pointer;
 }
@@ -101,7 +125,7 @@ h3 {
 	color: #2a3135 ;
 	font-size: 16px;
 	font-weight: normal;
-	font-family: Georgia, "Times New Roman";
+	font-family: Georgia, "Times New Roman", helvetica, arial;
 	letter-spacing: .5px;
 }
 
@@ -109,6 +133,7 @@ h3 {
 	color: #d7d6d8 ;
 	font-size: 12px;
 	font-weight: normal;
-	font-family: Georgia, "Times New Roman";
+	font-family:Georgia, "Times New Roman", helvetica, arial;
 	line-height: .1em;
+	padding-left: 10px;
 }

@@ -6,8 +6,13 @@
   <head>
     <script src="lib/jquery.js"></script>
     <script src="lib/underscore.js"></script>
+    <script src="lib/moment.js"></script>
     <script src="data_generator.js"></script>
-    <link rel="stylesheet" href="twittler.css">
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+
   </head>
   <body>
     <div id="left"></div>
@@ -15,79 +20,23 @@
     <div id="top"></div>
     <div id="bottom"></div>
 
+    <header>
+      <h1> <img src="twittlerlogo.png" title="Twittler Logo" height ="204" width="769"> </h1>
+      <h2> Twitter 4 Neophytes </h2>
+      <button class="button" id="showTweets">Display All Users' Tweets </button>
+      <form class="twitform" onsubmit="return false">
+        <label for="sentMessage"> Any thoughts...?</label> 
+        <input type="text" id="sentMessage">
+        <input type="submit" class="sentMessage" value="Tweet">
+      </form>
+    </header>
 
-    <h1> <img src="twittlerlogo.png" title="Twittler Logo" height ="204" width="769"> </h1>
-    <h2> Like Twitter, only basic </h2>
-    <br>
-    <button class="showTweets"> Display New Tweets: All Users </button>
-    <br>
-    <br>
-    <h3>
-      <div id="tweetbody"></div>
-  </h3>
+    <section class="tweetbody">
+    </section>
+
     <script>
-
-    $(document).ready(function () {
-
-        var $body = $('#tweetbody');
-        $body.html('');
-
-
-        var refreshTweets = function (selectUser) {
-
-          $body.empty();
-
-          var tweetstore = [];
-
-          var userOnlyStream = (streams.home).filter(function (elem) {
-            return (elem.user === selectUser) 
-          });
-
-          var index = arguments.length < 1 ? streams.home.length - 1 : userOnlyStream.length -1;
-
-
-          while(index>= 0) {
-            var tweet = arguments.length < 1? streams.home[index] : userOnlyStream[index];
-            var $tweet = $('<div class="tweet"></div>');
-            var $user = $('<span class="username"> @' + '<a title="Display this user\'s tweets">' +  tweet.user + '</a>' +': </span>');
-            var $message = $('<span class="message">' + tweet.message + ' </span> ');
-            var $time = $('<p class="time">' + tweet.created_at + ' </p></br>');
-
-            $tweet.append($user);
-            $tweet.append($message);
-            $tweet.append($time);
-            tweetstore.push($tweet);
-            index -= 1;
-          } 
-
-          $body.prepend(tweetstore);
-
-
-        };
-
-        refreshTweets();
-
-        //window.setInterval(function () {streams.home.shift()}, Math.random() * 1500 );
-
-
-        $('button').on('click',  function () {
-
-          refreshTweets();
-
-        });
-
-        $('h3').on('click', '.username', function () {
-          refreshTweets($(this).find('a').text());
-
-       });
-
-
-      });
-
-
-
+        
     </script>
-
 
   </body>
 </html>
